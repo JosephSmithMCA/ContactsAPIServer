@@ -13,9 +13,14 @@ router.get('/', (req, res) => {
 })
 
 //ex. localhost:4000/api/destinations/post
-
 router.post('/post', (req,res) =>{
     dao.postBody(req, res);
+})
+
+//?this is inserting information to our destinations table
+//ex. localhost:4000/api/destinations/createdestination
+router.post('/createDestination', (req,res)=> {
+    dao.createDestination(req,res);
 })
 
 module.exports = router

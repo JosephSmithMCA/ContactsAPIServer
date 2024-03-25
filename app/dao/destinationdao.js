@@ -21,6 +21,20 @@ class DestinationDao{
         console.log(req.body)
         res.send('Data has been submitted')
     }
+
+    createDestination(req,res){
+        console.log(req.body)
+
+        //*Object.keys(req.body) puts the names of the object attributes into an array
+        let fields = Object.keys(req.body)
+        console.log(fields)
+
+        let values =  Object.values(req.body)
+        console.log(values);
+
+
+        pool.query(`INSERT INTO destination (${fields.join(',')}) VALUES(${Values.join(',')});`)
+    }
 }
 
 module.exports = DestinationDao;
